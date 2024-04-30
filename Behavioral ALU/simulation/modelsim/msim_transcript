@@ -1,0 +1,106 @@
+# Reading pref.tcl
+# do ALU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:33 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v 
+# -- Compiling module Arithmetic
+# 
+# Top level modules:
+# 	Arithmetic
+# End time: 12:55:34 on Dec 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:34 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v 
+# -- Compiling module Logic
+# 
+# Top level modules:
+# 	Logic
+# End time: 12:55:35 on Dec 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:35 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v 
+# -- Compiling module Shifter
+# 
+# Top level modules:
+# 	Shifter
+# End time: 12:55:36 on Dec 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:37 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v 
+# -- Compiling module ALU_TOP
+# 
+# Top level modules:
+# 	ALU_TOP
+# End time: 12:55:38 on Dec 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:38 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v 
+# -- Compiling module Control
+# 
+# Top level modules:
+# 	Control
+# End time: 12:55:38 on Dec 21,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:38 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v 
+# -- Compiling module Register
+# 
+# Top level modules:
+# 	Register
+# End time: 12:55:39 on Dec 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/CND/Digital/Projects/8-bit\ ALU\ Final\ Project/Behavioral\ ALU {D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:55:39 on Dec 21,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU" D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v 
+# -- Compiling module ALU_TOP_tb
+# 
+# Top level modules:
+# 	ALU_TOP_tb
+# End time: 12:55:39 on Dec 21,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ALU_TOP_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ALU_TOP_tb 
+# Start time: 12:55:39 on Dec 21,2023
+# Loading work.ALU_TOP_tb
+# Loading work.ALU_TOP
+# Loading work.Arithmetic
+# Loading work.Logic
+# Loading work.Shifter
+# Loading work.Control
+# Loading work.Register
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v(71)
+#    Time: 11534346 ns  Iteration: 0  Instance: /ALU_TOP_tb
+# Break in Module ALU_TOP_tb at D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v line 71
+# End time: 13:30:13 on Dec 21,2023, Elapsed time: 0:34:34
+# Errors: 0, Warnings: 0

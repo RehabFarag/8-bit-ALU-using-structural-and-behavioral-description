@@ -1,0 +1,25 @@
+module ALU_TOP #(parameter N=8)(
+				input [N-1:0] A,
+				input [N-1:0] B,
+				input [3:0] s,
+				output reg G,
+				output reg E,
+				output reg L,
+				output reg Zero,
+				output reg [N-1:0] F,
+				output reg carryOut,
+				output reg Overflow);
+				
+	wire [N-1:0] RA, RL, RS;
+			
+	reg [N-1:0] Rmux1, Rmux2;
+	Arithmetic A1(.A(A), .B(B), .s0(s[3]), .s1(s[2]), 
+	.L(L), .G(G), .E(E), .Zero(Zero), .RA(RA), 
+	.carryOut(carryOut), .Overflow(Overflow));
+	
+	Logic L1(.A(A), .B(B), .s0(s[3]), .s1(s[2]), .RL(RL));
+	
+	Shifter S1(.A(A), .s0(s[3]), .s1(s[2]), .RS(RS));
+	
+	
+endmodule

@@ -1,0 +1,41 @@
+module Arithmetic #(parameter N=8)(
+						input wire [N-1:0] A,
+						input wire [N-1:0] B,
+						input wire s2, 
+						input wire s3,
+						output reg L,
+						output reg G,
+						output reg E,
+						output reg Zero,
+						output reg [N-1:0] RA,
+						output reg carryOut,
+						output reg Overflow);
+						
+	localparam ADD = 2'b00, SUB = 2'b01, TWO_S = 2'b11;
+	
+	wire [N-1:0] RA_add, RA_sub, RA_twos;
+	wire carryOut_add, carryOut_sub, carryOut_twos;
+	
+	assign RA = ({s2,s3} == ADD) ?  	RA_add : ({s2,s3} == SUB) ? RA_sub :
+	({s2,s3} == TWO_S) ? RA_twos : 0;
+	
+	assign carryOut = ({s2,s3} == ADD) ?  	carryOut_add : ({s2,s3} == SUB) ? carryOut_sub :
+	({s2,s3} == TWO_S) ? carryOut_twos : 0;
+	
+	assign Overflow = carryOut;
+	
+	assign G = (A > B) ? 1 : 0;
+	
+	assign E = (A == B) ? 1 : 0;
+	
+	assign L = (A < B) ? 1 : 0;
+	
+	assign Zero = (RA == 0) ? 1 : 0;
+	
+	
+	Adder_subtractor AS1(.X(A), .Y(B), .cin(0), .Result(RA_add), .carryOut(carryOut_add));
+	Adder_subtractor AS2(.X(A), .Y(B), .cin(1), .Result(RA_sub), .carryOut(carryOut_sub));
+	Adder_subtractor AS3(.X(0), .Y(B), .cin(1), .Result(RA_twos), .carryOut(carryOut_twos));
+		
+
+endmodule

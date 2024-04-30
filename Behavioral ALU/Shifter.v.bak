@@ -1,0 +1,15 @@
+module Shifter #(parameter N=8)(
+					input [N-1:0] A,
+					input s0,
+					input s1,
+					output reg [N-1:0] RS);
+					
+	localparam RIGHT_ROTATE = 2'b00, LEFT_ROTATE = 2'b01, SHIFT_RIGHT = 2'b10, SHIFT_LEFT = 2'b11;
+					
+	always@(*)
+	begin
+		case({s1, s0})
+			
+		endcase
+	end
+endmodule

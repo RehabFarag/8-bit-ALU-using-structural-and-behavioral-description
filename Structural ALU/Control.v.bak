@@ -1,0 +1,13 @@
+module Control #(parameter  N = 8)(
+					input wire [N-1:0] RA,
+					input wire [N-1:0] RL,
+					input wire [N-1:0] RS,
+					input wire s0,
+					input wire s1,
+					output reg [N-1:0] RC);
+					
+	reg [N-1:0] Rmux1;
+	
+	assign RC = ({s0,s1} == 2'b10) ? RL : ({s0,s1} == 2'b11) ? RS : RA;
+
+endmodule

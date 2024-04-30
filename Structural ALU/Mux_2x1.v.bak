@@ -1,0 +1,8 @@
+module Mux_2x1 #(parameter N = 8)(
+					input wire signed [N-1:0] in1,
+					input wire signed [N-1:0] in1,
+					input wire sel,
+					output wire signed [N-1:0] out);
+					
+endmodule
+			

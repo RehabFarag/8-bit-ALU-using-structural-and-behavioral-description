@@ -1,0 +1,14 @@
+module Register #(parameter N = 8)(
+					input wire clk,
+					input wire rst,
+					input wire [N-1:0] RC,
+					output reg [N-1:0] F);
+
+	always@(posedge clk or posedge rst)
+	begin
+		if(rst)
+			F <= 0;
+		else
+			F <= RC;
+	end
+endmodule

@@ -1,0 +1,50 @@
+module Arithmetic #(parameter N=8)(
+						input wire [N-1:0] A,
+						input wire [N-1:0] B,
+						input wire s0, 
+						input wire s1,
+						output reg L,
+						output reg G,
+						output reg E,
+						output reg Zero,
+						output reg [N-1] RA,
+						output reg carryOut,
+						output reg Overflow);
+						
+	localparam ADD = 2'b00, SUB = 2'b01, TWO_S = 2'b11;
+						
+	always@(*)
+	begin
+		case({s1,s0})
+			ADD:  Adder_subtractor AS1(.X(A), .Y(B), .cin(0), .Result(RA), .carryOut(carryOut));
+			
+			SUB:  Adder_subtractor AS2(.X(A), .Y(B), .cin(1), .Result(RA), .carryOut(carryOut));
+			
+			TWO_S:  Adder_subtractor AS3(.X(0), .Y(B), .cin(1), .Result(RA), .carryOut(carryOut));
+			default:
+			begin
+				RA = 0;
+				carryOut = 0;
+			end
+			if(RA > 0)
+			begin
+				G = 1;
+				L = 0;
+				E = 0;
+			end
+			else if(RA == 0)
+			begin
+				E = 1;
+				G = 0;
+				L = 0;
+			end
+			else
+			begin
+				L = 1;
+				E = 0;
+				G = 0;
+			end
+		endcase
+	end
+
+endmodule

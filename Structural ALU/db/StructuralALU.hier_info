@@ -1,0 +1,585 @@
+|ALU_TOP
+clk => clk.IN1
+rst => rst.IN1
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+A[2] => A[2].IN3
+A[3] => A[3].IN3
+A[4] => A[4].IN3
+A[5] => A[5].IN3
+A[6] => A[6].IN3
+A[7] => A[7].IN3
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+B[4] => B[4].IN2
+B[5] => B[5].IN2
+B[6] => B[6].IN2
+B[7] => B[7].IN2
+s[0] => s[0].IN1
+s[1] => s[1].IN1
+s[2] => s[2].IN3
+s[3] => s[3].IN3
+G << Arithmetic:A1.G
+E << Arithmetic:A1.E
+L << Arithmetic:A1.L
+Zero << Arithmetic:A1.Zero
+carryOut << Arithmetic:A1.carryOut
+Overflow << Arithmetic:A1.Overflow
+F[0] << Register:R1.F
+F[1] << Register:R1.F
+F[2] << Register:R1.F
+F[3] << Register:R1.F
+F[4] << Register:R1.F
+F[5] << Register:R1.F
+F[6] << Register:R1.F
+F[7] << Register:R1.F
+
+
+|ALU_TOP|Arithmetic:A1
+A[0] => in1.DATAA
+A[0] => LessThan0.IN8
+A[0] => Equal5.IN7
+A[0] => LessThan1.IN8
+A[1] => in1.DATAA
+A[1] => LessThan0.IN7
+A[1] => Equal5.IN6
+A[1] => LessThan1.IN7
+A[2] => in1.DATAA
+A[2] => LessThan0.IN6
+A[2] => Equal5.IN5
+A[2] => LessThan1.IN6
+A[3] => in1.DATAA
+A[3] => LessThan0.IN5
+A[3] => Equal5.IN4
+A[3] => LessThan1.IN5
+A[4] => in1.DATAA
+A[4] => LessThan0.IN4
+A[4] => Equal5.IN3
+A[4] => LessThan1.IN4
+A[5] => in1.DATAA
+A[5] => LessThan0.IN3
+A[5] => Equal5.IN2
+A[5] => LessThan1.IN3
+A[6] => in1.DATAA
+A[6] => LessThan0.IN2
+A[6] => Equal5.IN1
+A[6] => LessThan1.IN2
+A[7] => in1.DATAA
+A[7] => Overflow.IN0
+A[7] => Overflow.IN0
+A[7] => LessThan0.IN1
+A[7] => Equal5.IN0
+A[7] => LessThan1.IN1
+A[7] => Overflow.IN0
+A[7] => Overflow.IN0
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+s2 => Equal0.IN0
+s2 => Equal1.IN0
+s2 => Equal2.IN0
+s2 => Equal3.IN1
+s2 => Equal4.IN0
+s3 => Equal0.IN1
+s3 => Equal1.IN1
+s3 => Equal2.IN1
+s3 => Equal3.IN0
+s3 => Equal4.IN1
+L <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+G <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+E <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
+Zero <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
+RA[0] <= Adder_subtractor:AS1.Result
+RA[1] <= Adder_subtractor:AS1.Result
+RA[2] <= Adder_subtractor:AS1.Result
+RA[3] <= Adder_subtractor:AS1.Result
+RA[4] <= Adder_subtractor:AS1.Result
+RA[5] <= Adder_subtractor:AS1.Result
+RA[6] <= Adder_subtractor:AS1.Result
+RA[7] <= Adder_subtractor:AS1.Result
+carryOut <= Adder_subtractor:AS1.carryOut
+Overflow <= Overflow.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1
+X[0] => X[0].IN1
+X[1] => X[1].IN1
+X[2] => X[2].IN1
+X[3] => X[3].IN1
+X[4] => X[4].IN1
+X[5] => X[5].IN1
+X[6] => X[6].IN1
+X[7] => X[7].IN1
+Y[0] => Xor_gen[0].XORInst.IN0
+Y[1] => Xor_gen[1].XORInst.IN0
+Y[2] => Xor_gen[2].XORInst.IN0
+Y[3] => Xor_gen[3].XORInst.IN0
+Y[4] => Xor_gen[4].XORInst.IN0
+Y[5] => Xor_gen[5].XORInst.IN0
+Y[6] => Xor_gen[6].XORInst.IN0
+Y[7] => Xor_gen[7].XORInst.IN0
+cin => g2.DATAIN
+cin => Xor_gen[0].XORInst.IN1
+cin => Xor_gen[1].XORInst.IN1
+cin => Xor_gen[2].XORInst.IN1
+cin => Xor_gen[3].XORInst.IN1
+cin => Xor_gen[4].XORInst.IN1
+cin => Xor_gen[5].XORInst.IN1
+cin => Xor_gen[6].XORInst.IN1
+cin => Xor_gen[7].XORInst.IN1
+Result[0] <= FullAdder:FullAdder_FullSubtractor_gen[0].FAInstAdd.sum
+Result[1] <= FullAdder:FullAdder_FullSubtractor_gen[1].FAInstAdd.sum
+Result[2] <= FullAdder:FullAdder_FullSubtractor_gen[2].FAInstAdd.sum
+Result[3] <= FullAdder:FullAdder_FullSubtractor_gen[3].FAInstAdd.sum
+Result[4] <= FullAdder:FullAdder_FullSubtractor_gen[4].FAInstAdd.sum
+Result[5] <= FullAdder:FullAdder_FullSubtractor_gen[5].FAInstAdd.sum
+Result[6] <= FullAdder:FullAdder_FullSubtractor_gen[6].FAInstAdd.sum
+Result[7] <= FullAdder:FullAdder_FullSubtractor_gen[7].FAInstAdd.sum
+carryOut <= g3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[0].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[1].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[2].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[3].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[4].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[5].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[6].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Arithmetic:A1|Adder_subtractor:AS1|FullAdder:FullAdder_FullSubtractor_gen[7].FAInstAdd
+a => g1.IN0
+a => g4.IN0
+b => g1.IN1
+b => g4.IN1
+c => g2.IN1
+c => g3.IN1
+sum <= g2.DB_MAX_OUTPUT_PORT_TYPE
+carry <= g5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Logic:L1
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+A[2] => A[2].IN3
+A[3] => A[3].IN3
+A[4] => A[4].IN3
+A[5] => A[5].IN3
+A[6] => A[6].IN3
+A[7] => A[7].IN3
+B[0] => B[0].IN4
+B[1] => B[1].IN4
+B[2] => B[2].IN4
+B[3] => B[3].IN4
+B[4] => B[4].IN4
+B[5] => B[5].IN4
+B[6] => B[6].IN4
+B[7] => B[7].IN4
+s2 => Equal0.IN0
+s2 => Equal1.IN1
+s2 => Equal2.IN0
+s3 => Equal0.IN1
+s3 => Equal1.IN0
+s3 => Equal2.IN1
+RL[0] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[1] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[2] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[3] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[4] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[5] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[6] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+RL[7] <= RL.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Logic:L1|andGate:g1
+in1[0] => And_gen[0].AG.IN0
+in1[1] => And_gen[1].AG.IN0
+in1[2] => And_gen[2].AG.IN0
+in1[3] => And_gen[3].AG.IN0
+in1[4] => And_gen[4].AG.IN0
+in1[5] => And_gen[5].AG.IN0
+in1[6] => And_gen[6].AG.IN0
+in1[7] => And_gen[7].AG.IN0
+in2[0] => And_gen[0].AG.IN1
+in2[1] => And_gen[1].AG.IN1
+in2[2] => And_gen[2].AG.IN1
+in2[3] => And_gen[3].AG.IN1
+in2[4] => And_gen[4].AG.IN1
+in2[5] => And_gen[5].AG.IN1
+in2[6] => And_gen[6].AG.IN1
+in2[7] => And_gen[7].AG.IN1
+out[0] <= And_gen[0].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= And_gen[1].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= And_gen[2].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= And_gen[3].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= And_gen[4].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= And_gen[5].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= And_gen[6].AG.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= And_gen[7].AG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Logic:L1|xorGate:g2
+in1[0] => Xor_gen[0].XG.IN0
+in1[1] => Xor_gen[1].XG.IN0
+in1[2] => Xor_gen[2].XG.IN0
+in1[3] => Xor_gen[3].XG.IN0
+in1[4] => Xor_gen[4].XG.IN0
+in1[5] => Xor_gen[5].XG.IN0
+in1[6] => Xor_gen[6].XG.IN0
+in1[7] => Xor_gen[7].XG.IN0
+in2[0] => Xor_gen[0].XG.IN1
+in2[1] => Xor_gen[1].XG.IN1
+in2[2] => Xor_gen[2].XG.IN1
+in2[3] => Xor_gen[3].XG.IN1
+in2[4] => Xor_gen[4].XG.IN1
+in2[5] => Xor_gen[5].XG.IN1
+in2[6] => Xor_gen[6].XG.IN1
+in2[7] => Xor_gen[7].XG.IN1
+out[0] <= Xor_gen[0].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Xor_gen[1].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Xor_gen[2].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Xor_gen[3].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= Xor_gen[4].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= Xor_gen[5].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= Xor_gen[6].XG.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= Xor_gen[7].XG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Logic:L1|orGate:g3
+in1[0] => Or_gen[0].OG.IN0
+in1[1] => Or_gen[1].OG.IN0
+in1[2] => Or_gen[2].OG.IN0
+in1[3] => Or_gen[3].OG.IN0
+in1[4] => Or_gen[4].OG.IN0
+in1[5] => Or_gen[5].OG.IN0
+in1[6] => Or_gen[6].OG.IN0
+in1[7] => Or_gen[7].OG.IN0
+in2[0] => Or_gen[0].OG.IN1
+in2[1] => Or_gen[1].OG.IN1
+in2[2] => Or_gen[2].OG.IN1
+in2[3] => Or_gen[3].OG.IN1
+in2[4] => Or_gen[4].OG.IN1
+in2[5] => Or_gen[5].OG.IN1
+in2[6] => Or_gen[6].OG.IN1
+in2[7] => Or_gen[7].OG.IN1
+out[0] <= Or_gen[0].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Or_gen[1].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Or_gen[2].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Or_gen[3].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= Or_gen[4].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= Or_gen[5].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= Or_gen[6].OG.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= Or_gen[7].OG.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Logic:L1|notGate:g4
+in[0] => out[0].DATAIN
+in[1] => out[1].DATAIN
+in[2] => out[2].DATAIN
+in[3] => out[3].DATAIN
+in[4] => out[4].DATAIN
+in[5] => out[5].DATAIN
+in[6] => out[6].DATAIN
+in[7] => out[7].DATAIN
+out[0] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= in[1].DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= in[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= in[3].DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in[4].DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in[5].DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= in[6].DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Shifter:S1
+A[0] => RS.DATAA
+A[0] => RS.DATAB
+A[0] => RS.DATAB
+A[1] => RS.DATAA
+A[1] => RS.DATAB
+A[1] => RS.DATAB
+A[1] => RS.DATAB
+A[2] => RS.DATAA
+A[2] => RS.DATAB
+A[2] => RS.DATAB
+A[2] => RS.DATAB
+A[3] => RS.DATAA
+A[3] => RS.DATAB
+A[3] => RS.DATAB
+A[3] => RS.DATAB
+A[4] => RS.DATAA
+A[4] => RS.DATAB
+A[4] => RS.DATAB
+A[4] => RS.DATAB
+A[5] => RS.DATAA
+A[5] => RS.DATAB
+A[5] => RS.DATAB
+A[5] => RS.DATAB
+A[6] => RS.DATAA
+A[6] => RS.DATAB
+A[6] => RS.DATAB
+A[6] => RS.DATAB
+A[7] => RS.DATAB
+A[7] => RS.DATAB
+A[7] => RS.DATAB
+s2 => Equal0.IN0
+s2 => Equal1.IN1
+s2 => Equal2.IN0
+s3 => Equal0.IN1
+s3 => Equal1.IN0
+s3 => Equal2.IN1
+RS[0] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[1] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[2] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[3] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[4] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[5] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[6] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+RS[7] <= RS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Control:C1
+RA[0] => RA[0].IN1
+RA[1] => RA[1].IN1
+RA[2] => RA[2].IN1
+RA[3] => RA[3].IN1
+RA[4] => RA[4].IN1
+RA[5] => RA[5].IN1
+RA[6] => RA[6].IN1
+RA[7] => RA[7].IN1
+RL[0] => RL[0].IN1
+RL[1] => RL[1].IN1
+RL[2] => RL[2].IN1
+RL[3] => RL[3].IN1
+RL[4] => RL[4].IN1
+RL[5] => RL[5].IN1
+RL[6] => RL[6].IN1
+RL[7] => RL[7].IN1
+RS[0] => RS[0].IN1
+RS[1] => RS[1].IN1
+RS[2] => RS[2].IN1
+RS[3] => RS[3].IN1
+RS[4] => RS[4].IN1
+RS[5] => RS[5].IN1
+RS[6] => RS[6].IN1
+RS[7] => RS[7].IN1
+s0 => s0.IN1
+s1 => s1.IN1
+RC[0] <= Mux_2x1:m2.out
+RC[1] <= Mux_2x1:m2.out
+RC[2] <= Mux_2x1:m2.out
+RC[3] <= Mux_2x1:m2.out
+RC[4] <= Mux_2x1:m2.out
+RC[5] <= Mux_2x1:m2.out
+RC[6] <= Mux_2x1:m2.out
+RC[7] <= Mux_2x1:m2.out
+
+
+|ALU_TOP|Control:C1|Mux_2x1:m1
+in1[0] => out.DATAA
+in1[1] => out.DATAA
+in1[2] => out.DATAA
+in1[3] => out.DATAA
+in1[4] => out.DATAA
+in1[5] => out.DATAA
+in1[6] => out.DATAA
+in1[7] => out.DATAA
+in2[0] => out.DATAB
+in2[1] => out.DATAB
+in2[2] => out.DATAB
+in2[3] => out.DATAB
+in2[4] => out.DATAB
+in2[5] => out.DATAB
+in2[6] => out.DATAB
+in2[7] => out.DATAB
+sel => Decoder0.IN0
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Control:C1|Mux_2x1:m2
+in1[0] => out.DATAA
+in1[1] => out.DATAA
+in1[2] => out.DATAA
+in1[3] => out.DATAA
+in1[4] => out.DATAA
+in1[5] => out.DATAA
+in1[6] => out.DATAA
+in1[7] => out.DATAA
+in2[0] => out.DATAB
+in2[1] => out.DATAB
+in2[2] => out.DATAB
+in2[3] => out.DATAB
+in2[4] => out.DATAB
+in2[5] => out.DATAB
+in2[6] => out.DATAB
+in2[7] => out.DATAB
+sel => Decoder0.IN0
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1
+clk => clk.IN8
+rst => rst.IN8
+RC[0] => RC[0].IN1
+RC[1] => RC[1].IN1
+RC[2] => RC[2].IN1
+RC[3] => RC[3].IN1
+RC[4] => RC[4].IN1
+RC[5] => RC[5].IN1
+RC[6] => RC[6].IN1
+RC[7] => RC[7].IN1
+F[0] <= d_ff:D_Flip_Flop_gen[0].Dff.q
+F[1] <= d_ff:D_Flip_Flop_gen[1].Dff.q
+F[2] <= d_ff:D_Flip_Flop_gen[2].Dff.q
+F[3] <= d_ff:D_Flip_Flop_gen[3].Dff.q
+F[4] <= d_ff:D_Flip_Flop_gen[4].Dff.q
+F[5] <= d_ff:D_Flip_Flop_gen[5].Dff.q
+F[6] <= d_ff:D_Flip_Flop_gen[6].Dff.q
+F[7] <= d_ff:D_Flip_Flop_gen[7].Dff.q
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[0].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[1].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[2].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[3].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[4].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[5].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[6].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU_TOP|Register:R1|d_ff:D_Flip_Flop_gen[7].Dff
+clk => q~reg0.CLK
+rst => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

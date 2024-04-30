@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Thu Dec 21 12:53:56 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : ALU
+Top-level Entity Name : ALU_TOP
+Family : Cyclone V
+Device : 5CGXFC7C6F23I7
+Power Models : Final
+Total Thermal Power Dissipation : 391.50 mW
+Core Dynamic Thermal Power Dissipation : 3.59 mW
+Core Static Thermal Power Dissipation : 349.69 mW
+I/O Thermal Power Dissipation : 38.22 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

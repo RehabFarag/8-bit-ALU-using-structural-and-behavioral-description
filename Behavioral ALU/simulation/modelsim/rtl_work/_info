@@ -1,0 +1,186 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/simulation/modelsim
+vALU_TOP
+Z1 !s110 1703156138
+!i10b 1
+!s100 Qo[jYlS?JO2Fh1NVCRHEF2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IC:PR2>=PAWM?A6n]LYcal1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1702580511
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v
+!i122 3
+L0 1 29
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1703156137.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work {+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU}
+Z7 tCvgOpt 0
+n@a@l@u_@t@o@p
+vALU_TOP_tb
+Z8 !s110 1703156139
+!i10b 1
+!s100 iS0h@E?oo3P=46j179fno3
+R2
+IIdTD]I7zQZ=hj?SgZ]8=n1
+R3
+R0
+w1702659216
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v
+!i122 6
+L0 2 75
+R4
+r1
+!s85 0
+31
+!s108 1703156139.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/ALU_TOP_tb.v|
+!i113 1
+R5
+R6
+R7
+n@a@l@u_@t@o@p_tb
+vArithmetic
+!s110 1703156134
+!i10b 1
+!s100 4fWhF?[j3Md0Rfg8adII:1
+R2
+IUj0SbDGzZ1c[:D18A;`g90
+R3
+R0
+w1702580548
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v
+!i122 0
+L0 1 69
+R4
+r1
+!s85 0
+31
+!s108 1703156133.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Arithmetic.v|
+!i113 1
+R5
+R6
+R7
+n@arithmetic
+vControl
+R1
+!i10b 1
+!s100 8G4MgZ?OB8K@iRPM3;8hK1
+R2
+IZlUlD>KPLoCnbF:hIZUzR2
+R3
+R0
+w1702580457
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v
+!i122 4
+L0 1 30
+R4
+r1
+!s85 0
+31
+Z9 !s108 1703156138.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Control.v|
+!i113 1
+R5
+R6
+R7
+n@control
+vLogic
+!s110 1703156135
+!i10b 1
+!s100 YO;kHQ87bLRb`QD3hDfg72
+R2
+Ia^0P:OZd0Ql<DYag2ccJh3
+R3
+R0
+w1702580541
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v
+!i122 1
+L0 1 28
+R4
+r1
+!s85 0
+31
+!s108 1703156134.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Logic.v|
+!i113 1
+R5
+R6
+R7
+n@logic
+vRegister
+R8
+!i10b 1
+!s100 ;QZaO<J`>8eXL4bQ4E7V<3
+R2
+ISSIC7DObzUz]2h9BDSMRR0
+R3
+R0
+w1702580428
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v
+!i122 5
+L0 1 18
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Register.v|
+!i113 1
+R5
+R6
+R7
+n@register
+vShifter
+!s110 1703156136
+!i10b 1
+!s100 AiLVLIm>8hXf0:ojEF6BS1
+R2
+IX?3Xd1ldBWHA6zHlVYPh<2
+R3
+R0
+w1702580533
+8D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v
+FD:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v
+!i122 2
+L0 1 26
+R4
+r1
+!s85 0
+31
+!s108 1703156135.000000
+!s107 D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU|D:/CND/Digital/Projects/8-bit ALU Final Project/Behavioral ALU/Shifter.v|
+!i113 1
+R5
+R6
+R7
+n@shifter

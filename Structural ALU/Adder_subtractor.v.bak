@@ -1,0 +1,32 @@
+module Adder_subtractor #(parameter N = 8)(
+														input wire [N-1:0] X,
+														input wire [N-1:0] Y,
+														input wire cin,
+														output wire [N-1:0] Result,
+														output wire carryOut);
+	wire [N-1:0] Y_complement;	
+	wire [N-1:0] RAdd;
+	wire [N-1:0] RSub;
+	wire [N:0] ca, cs;
+	assign ca[0] = cin;
+	assign cs[0] = cin;
+	assign Result = cin ? RSub : RAdd;
+	assign carryOut = cin ? cs[N] : ca[N];
+	assign Y_complement = ~Y;
+
+	genvar i;
+	generate
+		for(i = 0; i < N; i = i + 1)
+		begin: FullAdder_gen
+				FullAdder FAInstAdd(.a(X[i]), .b(Y[i]), .c(ca[i]), .sum(RAdd[i]), .carry(ca[i+1]));
+		end
+	endgenerate
+	
+	generate
+		for(i = 0; i < N; i = i + 1)
+		begin: FullSubtractor_gen
+				FullAdder FAInstSub(.a(X[i]), .b(Y_complement[i]), .c(cs[i]), .sum(RSub[i]), .carry(cs[i+1]));
+		end
+	endgenerate
+	
+endmodule

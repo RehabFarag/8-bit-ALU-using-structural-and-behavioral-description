@@ -1,0 +1,33 @@
+module Control #(parameter  N = 8)(
+					input wire [N-1:0] RA,
+					input wire [N-1:0] RL,
+					input wire [N-1:0] RS,
+					input wire s0,
+					input wire s1,
+					output reg [N-1:0] RC);
+					
+	reg [N-1:0] Rmux1;
+
+	always@(*)
+	begin
+			
+		case(s1)
+			1'b0: begin
+				Rmux1 = RL;
+			end
+			1'b1: begin
+				Rmux1 = RS;
+			end
+		endcase
+
+		case(s0)
+			1'b0: begin
+				RC = RA;
+			end
+			1'b1: begin
+				RC = Rmux1;
+			end
+		endcase
+		
+	end
+endmodule

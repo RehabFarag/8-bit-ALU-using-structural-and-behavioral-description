@@ -1,0 +1,23 @@
+module Logic #(parameter N = 8)(
+				input wire [N-1:0] A,
+				input wire [N-1:0] B,
+				input wire s0, 
+				input wire s1,
+				output [N-1] RL
+				);
+				
+	localparam AND = 2'b00, XOR = 2'b01, OR = 2'b10, ONE_S = 2'b11;
+
+	always@(*)
+	begin
+		case({s1,s0})
+			AND: and g1(RL, A, B);
+			XOR: xor g2(RL, A, B);
+			OR: or g3(RL, A, B);
+			ONE_S: begin
+				Adder_subtractor AS1(0, B, 1, RL1, c);
+				Adder_subtractor AS2(B, 1, 1, RL, c);
+			end
+		endcase
+	end
+				
